@@ -25,15 +25,15 @@ extension RileyLinkDeviceError: LocalizedError {
         case .errorResponse(let message):
             return message
         case .invalidResponse(let response):
-            return String(format: LocalizedString("Response %@ is invalid", comment: "Invalid response error description (1: response)"), String(describing: response))
+            return String(format: LocalizedString("响应 %@ 无效", comment: "Invalid response error description (1: response)"), String(describing: response))
         case .writeSizeLimitExceeded(let maxLength):
-            return String(format: LocalizedString("Data exceeded maximum size of %@ bytes", comment: "Write size limit exceeded error description (1: size limit)"), NumberFormatter.localizedString(from: NSNumber(value: maxLength), number: .none))
+            return String(format: LocalizedString("数据超出了 %@ 字节的最大大小", comment: "Write size limit exceeded error description (1: size limit)"), NumberFormatter.localizedString(from: NSNumber(value: maxLength), number: .none))
         case .responseTimeout:
             return LocalizedString("泵没有及时响应", comment: "Response timeout error description")
         case .commandsBlocked:
             return LocalizedString("Rileylink命令没有回应", comment: "commandsBlocked error description")
         case .unsupportedCommand(let command):
-            return String(format: LocalizedString("RileyLink firmware does not support the %@ command", comment: "Unsupported command error description"), String(describing: command))
+            return String(format: LocalizedString("RileyLink 固件不支持 %@ 命令", comment: "Unsupported command error description"), String(describing: command))
         }
     }
 
