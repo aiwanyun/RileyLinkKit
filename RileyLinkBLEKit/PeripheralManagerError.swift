@@ -33,9 +33,9 @@ extension PeripheralManagerError: LocalizedError {
         case .emptyValue:
             return LocalizedString("特征价值是空的", comment: "PeripheralManagerError.emptyValue error description")
         case .unknownCharacteristic(let cbuuid):
-            return String(format: LocalizedString("未知特征：%@", comment: "PeripheralManagerError.unknownCharacteristic error description"), cbuuid.uuidString)
+            return String(format: LocalizedString("Unknown characteristic: %@", comment: "PeripheralManagerError.unknownCharacteristic error description"), cbuuid.uuidString)
         case .unknownService(let cbuuid):
-            return String(format: LocalizedString("未知服务：%@", comment: "PeripheralManagerError.unknownCharacteristic error description"), cbuuid.uuidString)
+            return String(format: LocalizedString("Unknown service: %@", comment: "PeripheralManagerError.unknownCharacteristic error description"), cbuuid.uuidString)
         }
     }
 

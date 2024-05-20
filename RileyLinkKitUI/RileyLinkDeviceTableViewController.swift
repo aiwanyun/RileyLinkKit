@@ -822,11 +822,11 @@ private extension UITableViewCell {
     func setLEDMode(_ mode: RileyLinkLEDMode?) {
         switch mode {
         case .on:
-            detailTextLabel?.text = LocalizedString("在", comment: "Text indicating LED Mode is on")
+            detailTextLabel?.text = LocalizedString("打开", comment: "Text indicating LED Mode is on")
         case .off:
-            detailTextLabel?.text = LocalizedString("离开", comment: "Text indicating LED Mode is off")
+            detailTextLabel?.text = LocalizedString("关闭", comment: "Text indicating LED Mode is off")
         case .auto:
-            detailTextLabel?.text = LocalizedString("汽车", comment: "Text indicating LED Mode is auto")
+            detailTextLabel?.text = LocalizedString("自动", comment: "Text indicating LED Mode is auto")
         case .none:
             detailTextLabel?.text = ""
         }
@@ -841,6 +841,6 @@ private extension UITableViewCell {
     }
     
     func setBatteryAlert(_ level: Int?, formatter: NumberFormatter) {
-        detailTextLabel?.text = formatter.percentString(from: level) ?? LocalizedString("离开", comment: "Detail text when battery alert disabled.")
+        detailTextLabel?.text = formatter.percentString(from: level) ?? LocalizedString("关闭", comment: "Detail text when battery alert disabled.")
     }
 }
